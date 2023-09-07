@@ -1,3 +1,7 @@
+import { arrowRight } from "@/assets/icons";
+import { statistics } from "@/constants";
+import Button from "./Button";
+
 const Hero = () => {
     return (
         <section
@@ -15,6 +19,19 @@ const Hero = () => {
                     Discover stylish Nike arrivals, quality comfort, and
                     innovation for your active life.
                 </p>
+                <Button label='Show now' iconURL={arrowRight} />
+                <div className='flex justify-start items-start flex-wrap w-full mt-20 gap-16'>
+                    {statistics.map((stat, index) => (
+                        <div key={index}>
+                            <p className='text-4xl font-palanquin font-bold'>
+                                {stat.value}
+                            </p>
+                            <p className='leading-7 font-montserrat text-slate-gray'>
+                                {stat.label}
+                            </p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );
